@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Clone</title>
+    <link rel="website icon" type="png" href="/img/steam.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white p-4 shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="https://store.steampowered.com/" class="flex items-center">
+                <img src="/img/steam.png" width="50px" height="50px" alt=""> 
+                <span class="ml-2 text-xl font-bold">Steam</span>
+            </a>
+            
+            <!-- Hamburger -->
+            <button id="menu-toggle" class="block md:hidden focus:outline-none transition-delay-200ms">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+    
+            <!-- Navigation -->
+            <ul id="menu" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 absolute md:static bg-gray-800 w-full md:w-auto left-0 top-[70px] md:top-auto p-4 md:p-0 z-50">
+                <a href="#home"><li class="text-[#f0ffff] hover:text-gray-400 cursor-pointer transition delay-200ms">Home</li></a>
+                <a href="/page/library.html">
+                    <li class="text-[#f0ffff] hover:text-gray-400 cursor-pointer transition delay-200ms">Game Library</li>
+                    </a>
+                <a href="/page/contact.html"><li class="text-[#f0ffff] hover:text-gray-400 cursor-pointer transition delay-200ms">Contact</li></a>
+                <a href="/page/credit.html"><li class="text-[#f0ffff] hover:text-gray-400 cursor-pointer transition delay-200ms">Credit</li></a>
+             
+            </ul>
+        </div>
+    </nav>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    
+    
+
+    <!-- Home -->
+    <section id="home" class="text-[#f0ffff] py-16 text-center">
+        <div class="container mx-auto px-4 shadow-2xl pb-10 bg-gray-800 p-8 rounded-xl">
+            <div class="subtitle bg-gray-900 p-4 rounded-lg mb-10 border-solid animate-bounce">
+                <h1 class="text-xl/7 font-bold mb-6">Hello Gamelover!!</h1>
+                <h1 class="text-xl/7 font-bold mb-6">👋</h1>
+                <p class="text-lg">Your ultimate destination for premium and exclusive games!</p>
+                <p class="text-lg font-bold">This Is Game Promotion for This Month!!</p>
+            </div>
+            <div class="relative w-full max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
+                <div class="discount">
+                <a href="#spiderman">
+                    <img src="https://i.pinimg.com/736x/51/d4/45/51d445263f75d897e33f105f4d8b9ddb.jpg" class="shadow-xl max-h-[200px] object-cover rounded-lg cursor-pointer opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Promo 1">
+                </a>
+                    <p class="text-justify font-bold ">Title : Spiderman</p>
+                    <p class="text-justify text-sm">Developer : Insomniac</p>
+                    <p class="text-justify text-sm">Gendre : Action, Adventure</p>
+                    <p class="text-justify text-xs">Price : IDR.500.000</p>
+                    <p class="text-justify text-xs">Sales : 30%</p>
+                    <p class="text-justify text-xs">Realeased : 2018</p>
+                </div>
+                <div class="discount">
+                    <a href="#elden">
+                        <img src="https://th.bing.com/th/id/OIP.NjyjdkUyDxoFjt3k-hM9iQHaLH?w=201&h=302&c=7&r=0&o=5&dpr=1.3&pid=1.7"  class="shadow-xl max-h-[200px] object-cover rounded-lg cursor-pointer opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Promo 2">
+                    </a>
+                    <p class="text-justify font-bold">Title : Elden Ring</p>
+                    <p class="text-justify text-sm">Developer : FromSoftware</p>
+                    <p class="text-justify text-sm">Gendre : SoulsLike</p>
+                    <p class="text-justify text-xs">Price : IDR.800.000</p>
+                    <p class="text-justify text-xs">Sales : 20%</p>
+                    <p class="text-justify text-xs">Realeased : 2022</p>
+                </div>
+                <div class="discount">
+                    <a href="#gta">
+                        <img src="https://i.pinimg.com/736x/97/57/72/975772e76b6b02739fcd7ade87cee35b.jpg" class="shadow-xl max-h-[200px] object-cover rounded-lg cursor-pointer opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition duration-300" alt="Promo 3">
+                    </a>
+                    <p class="text-justify font-bold">Title : Grand Theft Auto VI</p>
+                    <p class="text-justify text-sm">Developer : Rockstar Games</p>
+                    <p class="text-justify text-sm">Gendre : Open World</p>
+                    <p class="text-justify text-xs">Price : IDR.1.300.000</p>
+                    <p class="text-justify text-xs">Sales : 25%</p>
+                    <p class="text-justify text-xs">Realeased : 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spiderman -->
+    <div>
+        <section id="spiderman" class="text-[#f0ffff] py-16 flex justify-center items-start">
+            <div class="container mx-auto px-4 shadow-2xl pb-10 bg-gray-800 p-8 rounded-xl flex flex-col md:flex-row items-center md:items-start">
+              <!-- Image Section -->
+              <div class="discount items-center md:w-1/3 md:mr-6">
+                <img src="https://th.bing.com/th/id/OIP.SEulI2S3_O1IgVcSoeewngHaEK?w=324&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" class="shadow-xl max-h-[300px] object-cover rounded-lg cursor-pointer opacity-50 hover:opacity-100 transition duration-300" alt="Promo 1">
+              </div>
+              <!-- Text Section -->
+              <div class="subtitle p-4 rounded-lg border-solid md:w-2/3">
+                <h1 class="text-xl font-bold mb-4">Spiderman</h1>
+                <p class="text-sm text-justify">Marvel's Spider-Man is a 2018 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment. Based on the Marvel Comics character Spider-Man, it tells an original narrative that is inspired by the long-running comic book mythology, while also drawing from various adaptations in other media. In the main story, the super-human crime lord Mister Negative orchestrates a plot to seize control of New York City's criminal underworld. When Mister Negative threatens to release a deadly virus, Spider-Man must confront him and protect the city while dealing with the personal problems of his civilian persona, Peter Parker.</p>
+              </div>
+            </div>
+    </div>
+
+    <!-- Elden Ring -->
+    <div>
+        <section id="elden" class="text-[#f0ffff] py-16 flex justify-center items-start">
+            <div class="container mx-auto px-4 shadow-2xl pb-10 bg-gray-800 p-8 rounded-xl flex flex-col md:flex-row items-center md:items-start">
+              <!-- Image Section -->
+              <div class="discount items-center md:w-1/3 md:mr-6">
+                <img src="https://cdn.mos.cms.futurecdn.net/5Uy9G9jBLAYRsfGCheFHHC.jpg" class="shadow-xl max-h-[300px] object-cover rounded-lg cursor-pointer opacity-50  hover:opacity-100 transition duration-300 pt-8 " alt="Promo 1">
+              </div>
+              <!-- Text Section -->
+              <div class="subtitle p-4 rounded-lg border-solid md:w-2/3">
+                <h1 class="text-xl font-bold mb-4">Elden Ring</h1>
+                <p class="text-sm text-justify">Elden Ring is set in the Lands Between, a realm governed by the Elden Ring, a divine artifact created by the Greater Will, one of the Outer Gods. Marika, chosen as the Elden Ring's vessel and elevated to godhood, formed the Golden Order alongside two Elden Lords: Godfrey, a warrior banished after losing grace, and Radagon, Marika’s male alter-ego. Marika planted the Erdtree, removed the Rune of Death to prevent true death, and persecuted races like the horned Omens and the Tarnished, warriors stripped of grace. After her son Godwyn's soul was stolen using the Rune of Death, Marika shattered the Elden Ring, leading to her imprisonment and a war among her demigod descendants for its shards. These include Morgott, loyal to the Golden Order; Mohg, who seeks his own dynasty; Radahn and Malenia, cursed twins; Rykard, who merged with a serpent god; Ranni, who opposes the Greater Will; and others, each with unique ambitions. Meanwhile, the Tarnished, exiled warriors resurrected by a mysterious power, are called back to restore the Elden Ring and ascend as the new Elden Lord. In the Shadow of the Erdtree expansion, Marika's origins in the hidden Land of Shadow are revealed, including her people's destruction by the Hornsent and her rise to godhood through the Gate of Divinity.</p>
+              </div>
+            </div>
+    </div>
+
+    <!-- GTA 6 -->
+    <div>
+        <section id="gta" class="text-[#f0ffff] py-16 flex justify-center items-start">
+            <div class="container mx-auto px-4 shadow-2xl pb-10 bg-gray-800 p-8 rounded-xl flex flex-col md:flex-row items-center md:items-start">
+              <!-- Image Section -->
+              <div class="discount items-center md:w-1/3 md:mr-6">
+                <img src="https://i.pinimg.com/736x/97/57/72/975772e76b6b02739fcd7ade87cee35b.jpg" class="shadow-xl max-h-[300px] object-cover rounded-lg cursor-pointer opacity-50 hover:opacity-100 transition duration-300" alt="Promo 1">
+              </div>
+              <!-- Text Section -->
+              <div class="subtitle p-4 rounded-lg border-solid md:w-2/3">
+                <h1 class="text-xl font-bold mb-4">Grand Theft Auto 6</h1>
+                <p class="text-lg text-justify">Coming Soon.</p>
+              </div>
+            </div>
+    </div>
+
+
+    <!-- Credit -->
+    <footer id="wm" class="bg-gray-700 py-4">
+        <div class="container mx-auto text-center text-gray-400">
+          <p>&copy;Ari Aprianto | ASE-10 | LP3I College Karawang</p>
+          <p>Follow me on 
+            <a href="https://www.instagram.com/arprnto_?igsh=MXAwcXZ1bWo3aGQ5Yg==" class="text-blue-500 hover:underline">Instagram</a>,
+            <a href="https://github.com/Arprnto" class="text-blue-500 hover:underline">Github</a>, and
+            <a href="https://www.facebook.com/share/1BUGvDfBRs/" class="text-blue-500 hover:underline">Facebook</a>.
+            <br>
+            <a href="https://store.steampowered.com/" class="text-blue-500 hover:underline"> &copy;Steam</a>
+
+          </p>
+        </div>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+Dokumentasi singkat Project Website untuk UAS matakuliah Web Design
+
+Teknologi yang digunakan : 
+
+HTML
+TailwindCSS
+Javascript
+
+Struktur Folder :
+
+UAS-WEBDESIGN_ARI-APRIANTO_ASE10
+├── img
+│   └── steam.png
+├── page
+│   ├── contact.html
+│   ├── credit.html
+│   ├── library.html
+│   └── index.html
+└── tailwind.config.js
+
+
+Terdiri dari 2 folder yaitu page, untuk menyimpan semua file HTML, dan Folder img, untuk menampung file gambar.
+
+Diluar folder terdapai 1 file HTML sebagai halaman utama dari website dan terdapat 1 file bawaan dari tailwind untuk mengkonfigurasi.
+
+Cara menjalankan : 
+
+Website yang saya buat bertemakan “Steam versi simpel”, Steam adalah platform yang menyediakan kebanyakan game yang dirilis zaman sekarang.
+
+Menggunakan live server. Install extendsion live server di visual studio code lalu klik go live di pojok kanan bawah.

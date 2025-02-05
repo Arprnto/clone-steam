@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Steam Clone</title>
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="bg-gray-800 text-white p-4 shadow-xl sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo Section -->
+            <a href="https://store.steampowered.com/" class="flex items-center">
+                <img src="/img/steam.png" width="50px" height="50px" alt=""> 
+                <span class="ml-2 text-xl font-bold">Steam</span>
+            </a>
+            
+            <!-- Hamburger Icon for Mobile -->
+            <button id="menu-toggle" class="block md:hidden focus:outline-none transition-delay-200ms">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+    
+            <!-- Navigation Links -->
+            <ul id="menu" class="hidden md:flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 absolute md:static bg-gray-800 w-full md:w-auto left-0 top-[70px] md:top-auto p-4 md:p-0 z-50">
+                <a href="/index.html"><li class="text-[#f0ffff] hover:text-gray-400 cursor-pointer transition delay-200ms">Home</li></a>
+                <a href="library.html">
+                <li class="text-[#f0ffff] hover:text-gray-400 cursor-pointer transition delay-200ms">Game Library</li>
+                </a>
+                <a href="contact.html"><li class="text-[#f0ffff] hover:text-gray-400 cursor-pointer transition delay-200ms">Contact</li></a>
+                <a href="credit.html"><li class="text-[#f0ffff] hover:text-gray-400 cursor-pointer transition delay-200ms">Credit</li></a>
+             
+            </ul>
+        </div>
+    </nav>
+    
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+    
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+    
+    <!-- content -->
+    <section id="library" class="py-16 bg-gray-800 text-[#f0ffff]">
+        <div class="container mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-8">Game Library</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+              <img src="https://image.api.playstation.com/vulcan/img/cfn/11307x4B5WLoVoIUtdewG4uJ_YuDRTwBxQy0qP8ylgazLLc01PBxbsFG1pGOWmqhZsxnNkrU3GXbdXIowBAstzlrhtQ4LCI4.png" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 1">
+              <h5 class="text-xl font-bold mb-2">Minecraft</h5>
+              <p class="text-gray-400 mb-4">Genre: Sanbox, Adventure</p>
+              <p class="text-gray-400 mb-4">Price : IDR.200.000</p>
+              <p class="text-gray-400 mb-4">Developer : Microsoft</p>
+              <a href="https://www.minecraft.net/en-us/download/server">
+                <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('Minecraft')">Buy</button>
+              </a>
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+              <img src="https://th.bing.com/th/id/OIP.ZeeRXeh_wSXALwFI49pIzQHaJF?rs=1&pid=ImgDetMain" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 2">
+              <h5 class="text-xl font-bold mb-2">GTA V</h5>
+              <p class="text-gray-400 mb-4">Genre: Open World</p>
+              <p class="text-gray-400 mb-4">Price : IDR.150.000</p>
+              <p class="text-gray-400 mb-4">Developer : Rockstar Games</p>
+              <a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/">
+              <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('GTA V')">Buy</button>
+              </a>
+          </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+              <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg?t=1736389084" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+              <h5 class="text-xl font-bold mb-2">PUBG</h5>
+              <p class="text-gray-400 mb-4">Genre: Battle Royale</p>
+              <p class="text-gray-400 mb-4">Price : Free</p>
+              <p class="text-gray-400 mb-4">Developer : Krafton</p>
+              <a href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/">
+                <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('PUBG')">Buy</button>
+              </a>
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/header.jpg?t=1738007476" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">Hogwarts Legacy</h5>
+                <p class="text-gray-400 mb-4">Genre: Action RPG</p>
+                <p class="text-gray-400 mb-4">Price : IDR.800.000</p>
+                <p class="text-gray-400 mb-4">Developer : Avalanche Software</p>
+                <a href="https://store.steampowered.com/app/990080/Hogwarts_Legacy/">
+                    <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('Hogwarts Legacy')">Buy</button>
+                </a>
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg?t=1734434803" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">Cyberpunk 2077</h5>
+                <p class="text-gray-400 mb-4">Genre: Action RPG</p>
+                <p class="text-gray-400 mb-4">Price : IDR.700.000</p>
+                <p class="text-gray-400 mb-4">Developer : CD PROJECT RED</p>
+                <a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/">
+                    <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('Cyberpunk 2077')">Buy</button>
+                </a>
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2208920/header.jpg?t=1736257857" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">Assassin's Creed Valhalla</h5>
+                <p class="text-gray-400 mb-4">Genre: Action RPG</p>
+                <p class="text-gray-400 mb-4">Price : IDR.619.000</p>
+                <p class="text-gray-400 mb-4">Developer : Ubisoft Montreal</p>
+                <a href="https://store.steampowered.com/app/2208920/Assassins_Creed_Valhalla/">
+                    <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('Assassin Creed Valhalla')">Buy</button>
+                </a>
+                   
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1778820/header.jpg?t=1737623581" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">Tekken 8</h5>
+                <p class="text-gray-400 mb-4">Genre: Fighting</p>
+                <p class="text-gray-400 mb-4">Price : IDR.700.000</p>
+                <p class="text-gray-400 mb-4">Developer : Bandai Namco Std.</p>
+                <a href="https://store.steampowered.com/app/1778820/TEKKEN_8/">
+                    <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('Tekken 8')">Buy</button>
+                </a>
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1593500/header.jpg?t=1729030762" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">God Of War</h5>
+                <p class="text-gray-400 mb-4">Genre: Action RPG, Open World</p>
+                <p class="text-gray-400 mb-4">Price : IDR.750.000</p>
+                <p class="text-gray-400 mb-4">Developer : Santa Monica Std.</p>
+                <a href="https://store.steampowered.com/app/1593500/God_of_War/">
+                     <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('God Of War')">Buy</button>
+                </a>
+            </div>
+             <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/814380/header.jpg?t=1726158438" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">Sekiro : Shadow Die Twice</h5>
+                <p class="text-gray-400 mb-4">Genre: SoulsLike</p>
+                <p class="text-gray-400 mb-4">Price : IDR.900.000</p>
+                <p class="text-gray-400 mb-4">Developer : From Software</p>
+                <a href="https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/">
+                    <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('Sekiro : Shadow Die Twice')">Buy</button>
+                </a>
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2679460/header.jpg?t=1736331314" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">Metaphor: ReFantazio</h5>
+                <p class="text-gray-400 mb-4">Genre: RPG, TurnBase</p>
+                <p class="text-gray-400 mb-4">Price : IDR.550.000</p>
+                <p class="text-gray-400 mb-4">Developer : ATLUS</p>
+                <a href="https://store.steampowered.com/app/2679460/Metaphor_ReFantazio/">
+                <button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('Metaphor: ReFantazio')">Buy</button>
+                </a>
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/header.jpg?t=1730911936" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">It Takes Two</h5>
+                <p class="text-gray-400 mb-4">Genre: Multiplayer, Adventure</p>
+                <p class="text-gray-400 mb-4">Price : IDR.480.000</p>
+                <p class="text-gray-400 mb-4">Developer : Hazelight Studios</p>
+                <a href="https://store.steampowered.com/app/1426210/It_Takes_Two/"><button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('It Takes Two',)">Buy</button></a>
+            </div>
+            <div class="game-card bg-gray-900 p-4 rounded-lg">
+                <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2651280/header.jpg?t=1738343995" class="w-full max-h-[200px] object-cover rounded-md mb-4" alt="Game 3">
+                <h5 class="text-xl font-bold mb-2">Spiderman 2</h5>
+                <p class="text-gray-400 mb-4">Genre: Action, Adventure</p>
+                <p class="text-gray-400 mb-4">Price : IDR.890.000</p>
+                <p class="text-gray-400 mb-4">Developer : Insomniac</p>
+                <a href="https://store.steampowered.com/app/2651280/Marvels_SpiderMan_2/"><button class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700" onclick="detail('Spiderman 2',)">Buy</button></a>
+            </div>
+        </div>
+      </section>
+
+      <script>
+         function detail(gameTitle) {
+        alert(`Kamu Berhasil Memilih ${gameTitle} silahkan download`);
+    }
+      </script>
+
+      
+<footer id="wm" class="bg-gray-700 py-4">
+    <div class="container mx-auto text-center text-gray-400">
+      <p>&copy;Ari Aprianto | ASE-10 | LP3I College Karawang</p>
+      <p>Follow me on 
+        <a href="https://www.instagram.com/arprnto_?igsh=MXAwcXZ1bWo3aGQ5Yg==" class="text-blue-500 hover:underline">Instagram</a>,
+        <a href="https://github.com/Arprnto" class="text-blue-500 hover:underline">Github</a>, and
+        <a href="https://www.facebook.com/share/1BUGvDfBRs/" class="text-blue-500 hover:underline">Facebook</a>. 
+        <br>
+        <a href="https://store.steampowered.com/" class="text-blue-500 hover:underline"> &copy;Steam</a>
+      
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
